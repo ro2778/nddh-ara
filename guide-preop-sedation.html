@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1B2631">
+<title>Preoperative Sedation Quick Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#f8fafc}
+.hdr{background:linear-gradient(135deg,#1B2631 0%,#2C3E6B 100%);padding:14px 16px;color:#fff;
+position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px}
+.hdr a{color:#94a3b8;text-decoration:none;font-size:22px}
+.hdr h1{font-size:15px;font-weight:700}
+.wrap{padding:12px;max-width:480px;margin:0 auto;padding-bottom:40px}
+.tag{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;margin-bottom:8px}
+.tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:8px 14px;border-radius:20px;border:2px solid #e2e8f0;background:#fff;font-size:12px;
+font-weight:700;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.tab.on{background:#1B2631;color:#fff;border-color:#1B2631}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px;margin-bottom:10px}
+.card h3{font-size:14px;color:#1A5276;margin-bottom:8px;font-weight:700}
+.drug{border-left:3px solid #E67E22;padding:8px 12px;margin:6px 0;background:#FEF9E7;border-radius:0 8px 8px 0}
+.drug .name{font-weight:700;font-size:13px;color:#1a202c}
+.drug .detail{font-size:11px;color:#475569;margin-top:2px;line-height:1.5}
+.drug .dose{font-size:13px;font-weight:700;color:#E67E22;margin-top:4px}
+.drug .onset{font-size:10px;color:#64748b;margin-top:2px}
+.warn{background:#FDEDEC;border:1px solid #F5B7B1;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:11px;color:#922B21;line-height:1.5}
+.warn b{color:#641E16}
+.info{background:#EBF5FB;border:1px solid #AED6F1;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:11px;color:#1A5276;line-height:1.5}
+.note{font-size:11px;color:#64748b;line-height:1.5;margin:6px 0}
+.line{font-size:10px;color:#94a3b8;text-transform:uppercase;font-weight:700;letter-spacing:0.05em;margin:12px 0 6px;padding-top:8px;border-top:1px solid #e2e8f0}
+.contra li{font-size:11px;color:#922B21;margin:2px 0;line-height:1.4}
+.sec{margin-bottom:6px}
+.sec-title{font-size:12px;font-weight:700;color:#2C3E50;cursor:pointer;padding:8px 0;display:flex;justify-content:space-between;align-items:center}
+.sec-body{font-size:11px;color:#475569;line-height:1.6;padding-bottom:8px}
+.after li{font-size:11px;color:#475569;margin:3px 0;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="hdr">
+<a href="javascript:history.back()">&larr;</a>
+<h1>Preoperative Sedation</h1>
+</div>
+<div class="wrap">
+<span class="tag" style="background:#EBF5FB;color:#1A5276">NDHT Guideline v3.2</span>
+<span class="tag" style="background:#FEF9E7;color:#7D6608;margin-left:4px">Quick Reference</span>
+
+<p style="font-size:12px;color:#475569;margin:8px 0 16px;line-height:1.5">Select your patient group to see dosing, routes, and key considerations at a glance.</p>
+
+<div class="tabs" id="tabs">
+<button class="tab on" onclick="show('paed')">&#x1F476; Paediatric</button>
+<button class="tab" onclick="show('adult')">&#x1F9D1; Adult</button>
+<button class="tab" onclick="show('ld')">&#x1F9E0; Learning Disability</button>
+<button class="tab" onclick="show('contra')">&#x26A0;&#xFE0F; Contraindications</button>
+<button class="tab" onclick="show('after')">&#x2705; After Giving</button>
+<button class="tab" onclick="show('full')">&#x1F4D6; Full Guideline</button>
+</div>
+
+<!-- PAEDIATRIC -->
+<div id="paed" class="panel">
+<div class="card">
+<h3>&#x1F476; Paediatric Sedative Premedication</h3>
+<p class="note">Choose based on cooperation, previous experience, and clinical situation. Oral preparations may be mixed with a small volume of flavoured squash.</p>
+
+<div class="line">1st Line Options</div>
+
+<div class="drug">
+<div class="name">Clonidine <span style="font-size:10px;color:#27AE60;font-weight:600">&#x2022; Tasteless</span></div>
+<div class="dose">4 mcg/kg oral (max 200 mcg)</div>
+<div class="detail">Formulation: IV solution (150 mcg/ml) given orally, or 25/100 mcg tablets (can crush &amp; disperse in water)</div>
+<div class="onset">&#x23F1; Onset: 45 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Dexmedetomidine (intranasal) <span style="font-size:10px;color:#27AE60;font-weight:600">&#x2022; Tasteless</span></div>
+<div class="dose">2-3 mcg/kg intranasal (max 200 mcg, round up to nearest 5 mcg)</div>
+<div class="detail">100 mcg/ml solution via MAD device. Shorter acting than clonidine, minimal respiratory depression.</div>
+<div class="onset">&#x23F1; Onset: 25 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Dexmedetomidine (buccal)</div>
+<div class="dose">1-4 mcg/kg buccal (max 200 mcg)</div>
+<div class="detail">100 mcg/ml solution via MAD device</div>
+<div class="onset">&#x23F1; Onset: 25 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Dexmedetomidine (oral)</div>
+<div class="dose">4 mcg/kg oral</div>
+<div class="detail">100 mcg/ml solution given orally</div>
+<div class="onset">&#x23F1; Onset: 30-45 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Midazolam (oral/enteral) &mdash; Miprosed</div>
+<div class="dose">0.25-0.5 mg/kg oral (max 20 mg)</div>
+<div class="detail">Formulation varies &mdash; check concentration carefully</div>
+<div class="onset">&#x23F1; Onset: 30 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Midazolam (buccal) &mdash; Epistatus/Buccolam</div>
+<div class="dose">300 mcg/kg buccal (max 10 mg)</div>
+<div class="detail">Epistatus 10 mg/ml, Buccolam 5 mg/ml &mdash; <b>CHECK concentration!</b><br>
+Age-based: 1-4y = 5 mg, 5-9y = 7.5 mg, 10-17y = 10 mg</div>
+<div class="onset">&#x23F1; Onset: 10-20 mins</div>
+</div>
+
+<div class="line">2nd Line / Rescue</div>
+
+<div class="drug">
+<div class="name">Ketamine (oral)</div>
+<div class="dose">5-10 mg/kg oral (max 400 mg)</div>
+<div class="detail">50 or 100 mg/ml solution given orally. Hallucinogenic &mdash; recover in quiet environment.</div>
+<div class="onset">&#x23F1; Onset: 20-30 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Ketamine + Midazolam combo (oral)</div>
+<div class="dose">Ketamine 3 mg/kg + Midazolam as above</div>
+<div class="detail">Over 1 year old only. Can be mixed together.</div>
+<div class="onset">&#x23F1; Onset: ~20 mins</div>
+</div>
+
+<div class="drug" style="border-left-color:#E74C3C">
+<div class="name">Ketamine (IM) &mdash; Last Resort</div>
+<div class="dose">5 mg/kg IM (max 400 mg)</div>
+<div class="detail">Prepare in 5 ml syringe. Deltoid, vastus lateralis, or ventrogluteal. Discuss with parent/carer and document. Have parent hug/distract child.</div>
+<div class="onset">&#x23F1; Onset: 3-5 mins</div>
+</div>
+
+<div class="info"><b>Combinations:</b> If single agent fails, combinations can be used (e.g. midazolam + clonidine). Use either clonidine OR dexmedetomidine, <b>NOT both</b>. If 2nd/3rd line needed, consider remaining with the child continuously. Dexmedetomidine can be mixed with midazolam.</div>
+
+<div class="warn"><b>Overweight children:</b> Take care with dosing. Refer to SOBA guideline for dose adjustments based on BMI centiles.</div>
+
+<div class="info"><b>Refused/vomited dose:</b> Contact prescribing anaesthetist immediately. Do NOT transfer to theatre without discussing.</div>
+</div>
+
+<div class="card">
+<h3>&#x1F4A8; Intranasal Administration (MAD Device)</h3>
+<p class="note" style="line-height:1.6">
+&bull; Use concentrated solution, max 0.3 ml per nostril ideal<br>
+&bull; For 10-79 mcg: dilute to 0.8 ml total with NaCl 0.9%, give 0.4 ml per nostril<br>
+&bull; For 80-200 mcg: use undiluted, divide between nostrils<br>
+&bull; Use 2 ml syringe. Nestle sponge gently but firmly in nostril<br>
+&bull; Add air bubble behind drug in syringe to clear dead space<br>
+&bull; Short sharp push to atomise properly<br>
+&bull; Check nostrils for mucus/blood first &mdash; suction if needed
+</p>
+</div>
+</div>
+
+<!-- ADULT -->
+<div id="adult" class="panel" style="display:none">
+<div class="card">
+<h3>&#x1F9D1; Adult Sedative Premedication</h3>
+<p class="note">Clear explanation and calm dialogue often suffices. If medication is indicated for anxiety, benzodiazepines are the mainstay.</p>
+
+<div class="line">1st Line &mdash; Anxiolysis</div>
+
+<div class="drug">
+<div class="name">Lormetazepam <span style="font-size:10px;color:#27AE60;font-weight:600">&#x2022; Preferred</span></div>
+<div class="dose">1-2 mg oral (1 mg in elderly or &lt;50 kg)</div>
+<div class="detail">Tablets. Greater anxiolytic effect and less hangover than diazepam. Safe in renal impairment, caution in hepatic.</div>
+<div class="onset">&#x23F1; Onset: ~20 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Lorazepam</div>
+<div class="dose">0.5-1 mg oral (lower dose in elderly/frail)</div>
+<div class="detail">Tablets. Longer onset than lormetazepam, longer duration of action.</div>
+<div class="onset">&#x23F1; Onset: ~90 mins (much slower!)</div>
+</div>
+
+<div class="drug">
+<div class="name">Temazepam</div>
+<div class="dose">10-30 mg oral (lower dose in elderly/frail)</div>
+<div class="detail">Tablets</div>
+<div class="onset">&#x23F1; Onset: 1-2 hours</div>
+</div>
+
+<div class="drug">
+<div class="name">Diazepam</div>
+<div class="dose">2.5-10 mg oral (lower dose in elderly/frail)</div>
+<div class="detail">Tablets</div>
+<div class="onset">&#x23F1; Onset: 1-2 hours</div>
+</div>
+
+<div class="line">2nd Line &mdash; Severe Agitation / Learning Difficulties</div>
+
+<div class="drug">
+<div class="name">Midazolam (oral/buccal)</div>
+<div class="dose">Oral: 0.25 mg/kg (max 20 mg) &bull; Buccal: 0.3 mg/kg (max 10 mg)</div>
+<div class="detail">CHECK formulation &amp; concentration. Epistatus 10 mg/ml, Buccolam 5 mg/ml. Anaesthetist must be available to attend patient.</div>
+<div class="onset">&#x23F1; Onset: 20-30 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Clonidine</div>
+<div class="dose">4 mcg/kg oral (max 200 mcg)</div>
+<div class="detail">IV solution 150 mcg/ml given orally, or tablets 25/100 mcg</div>
+<div class="onset">&#x23F1; Onset: 45-60 mins</div>
+</div>
+
+<div class="drug">
+<div class="name">Dexmedetomidine (intranasal/buccal)</div>
+<div class="dose">2-3 mcg/kg intranasal or 1-4 mcg/kg buccal (max 200 mcg)</div>
+<div class="detail">100 mcg/ml solution. Outside of product license. Use MAD device.</div>
+<div class="onset">&#x23F1; Onset: 25 mins</div>
+</div>
+
+<div class="line">Last Resort</div>
+
+<div class="drug" style="border-left-color:#E74C3C">
+<div class="name">Ketamine (oral or IM)</div>
+<div class="dose">5 mg/kg oral or IM</div>
+<div class="detail">Outside of license. Discuss with consultant. IM onset much faster (5 mins vs 20-30 mins oral).</div>
+<div class="onset">&#x23F1; Oral: 20-30 mins &bull; IM: 5 mins</div>
+</div>
+
+<div class="warn"><b>Midazolam for severe agitation:</b> Pre-operative planning should have been made. Anaesthetist must be present on ward until transfer to theatre.</div>
+</div>
+</div>
+
+<!-- LEARNING DISABILITY -->
+<div id="ld" class="panel" style="display:none">
+<div class="card">
+<h3>&#x1F9E0; Patients with Learning Disabilities or Special Needs</h3>
+<p class="note" style="line-height:1.6">
+These patients may require a tailored approach. Key principles:
+</p>
+<div class="info">
+<b>Before the day:</b><br>
+&bull; Northern Site: complete "Reasonable Adjustment Pathway"<br>
+&bull; Eastern Site: use "This is me" passport<br>
+&bull; Need for sedation should be identified at pre-assessment<br>
+&bull; Consider non-pharmacological methods: Play Specialists, Learning Disability Liaison
+</div>
+
+<div class="info">
+<b>Consent:</b><br>
+&bull; If doubt about capacity &rarr; formal mental capacity assessment, document in notes<br>
+&bull; If lacking capacity &rarr; best interests decision, least restrictive option<br>
+&bull; Include the patient in discussions as much as their comprehension allows
+</div>
+
+<p class="note" style="margin-top:12px"><b>Drug choices:</b> Use the same agents as for paediatric or adult patients (select the appropriate tab). Key differences:</p>
+
+<div class="drug">
+<div class="name">Lorazepam/Lormetazepam may be insufficient</div>
+<div class="detail">In patients with severe agitation or learning difficulties, oral/buccal midazolam may be necessary. Anaesthetist must be available.</div>
+</div>
+
+<div class="drug">
+<div class="name">Up to 3 different medications may be needed</div>
+<div class="detail">Under the direction of an anaesthetist. If 2nd/3rd line agents used, consider remaining with the patient continuously.</div>
+</div>
+
+<div class="drug" style="border-left-color:#E74C3C">
+<div class="name">Complex cases &mdash; sedation at home or car park</div>
+<div class="detail">Highly unusual. Requires extensive MDT planning BEFORE the day. Not covered by this guideline &mdash; discuss with consultant.</div>
+</div>
+</div>
+</div>
+
+<!-- CONTRAINDICATIONS -->
+<div id="contra" class="panel" style="display:none">
+<div class="card">
+<h3>&#x26A0;&#xFE0F; Contraindications to Sedative Premedication</h3>
+<div class="warn">
+<b>Careful risk assessment required if any of the following are present:</b>
+<ul class="contra" style="margin-top:6px;padding-left:16px">
+<li>Difficult airway</li>
+<li>Increased aspiration risk</li>
+<li>Severe obstructive sleep apnoea</li>
+<li>Raised intracranial pressure</li>
+<li>Severe hepatic or renal impairment</li>
+<li>Previous allergic or behavioural reaction to the planned premedication</li>
+<li>New or unexplained reduced saturations on room air</li>
+<li>Severe respiratory disease (e.g. COPD requiring long-term O&#x2082;)</li>
+<li>Acute systemic illness (e.g. severe sepsis)</li>
+</ul>
+</div>
+<div class="info"><b>If sedation still warranted despite contraindications:</b> discuss with a paediatric anaesthetist or on-call consultant first. The decision to give sedative premedication in these situations rests with the <b>consultant</b>.</div>
+
+<div style="margin-top:12px">
+<div class="line">Key Drug Interactions</div>
+<p class="note">
+&bull; Use either clonidine OR dexmedetomidine &mdash; <b>NOT both</b><br>
+&bull; Midazolam: may see paradoxical agitation<br>
+&bull; Ketamine: hallucinogenic &mdash; recover in quiet environment<br>
+&bull; Overweight children: adjust doses per SOBA guideline
+</p>
+</div>
+</div>
+</div>
+
+<!-- AFTER GIVING -->
+<div id="after" class="panel" style="display:none">
+<div class="card">
+<h3>&#x2705; After Administration</h3>
+<ul class="after" style="padding-left:16px;margin-top:8px">
+<li>Patient should remain on ward under direct supervision of a responsible adult (parent/guardian)</li>
+<li>When patient becomes drowsy, they should lie in bed or on a trolley</li>
+<li>If they fall asleep &rarr; <b>continuous SpO&#x2082; monitoring with pulse oximetry</b></li>
+<li>Oxygen should <b>NOT</b> be routinely applied</li>
+<li>If premedication inadequate &rarr; additional medication at discretion of prescribing anaesthetist</li>
+<li>If patient refuses, spits out or vomits medication &rarr; contact prescribing anaesthetist immediately. <b>Do NOT transfer to theatre</b> without discussing</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>&#x1F469;&#x200D;&#x2695;&#xFE0F; Roles</h3>
+<p class="note"><b>Anaesthetist:</b> choice of sedative, correct prescription, ensure safe environment, inform parents/carers of effects</p>
+<p class="note"><b>Nurse:</b> check prescription, prepare and administer safely, communicate problems to anaesthetist, maintain safe environment with monitoring to avoid falls and unrecognised hypoxia</p>
+</div>
+</div>
+
+<!-- FULL GUIDELINE (collapsed sections) -->
+<div id="full" class="panel" style="display:none">
+<div class="card">
+<h3>&#x1F4D6; Full Guideline Text</h3>
+<p class="note">Tap any section heading to expand.</p>
+</div>
+
+<div class="card" id="fullcontent"></div>
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.panel').forEach(function(p){p.style.display='none';});
+document.getElementById(id).style.display='block';
+document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+event.target.classList.add('on');
+window.scrollTo(0,0);
+}
+</script>
+</div>
+</body>
+</html>
