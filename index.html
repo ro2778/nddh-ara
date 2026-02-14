@@ -237,6 +237,38 @@ h(PersonConfig,{person:{name:"Martin",...martinConfig},onChange:function(f,v){on
 h("div",{style:{marginTop:24,textAlign:"center"}},
 h("button",{onClick:onReset,style:{padding:"8px 24px",borderRadius:8,border:"2px solid #E74C3C",
 backgroundColor:"#fff",color:"#E74C3C",fontWeight:700,fontSize:12,cursor:"pointer"}},"Reset All to Defaults")));}
+function AboutSection(){
+var versions=[
+{v:"3.5",date:"14 Feb 2025",title:"About & Changelog",items:["Added About tab with version history","The journey so far, documented for posterity"]},
+{v:"3.1",date:"14 Feb 2025",title:"Surf\u2019s Up",items:["New app icon \u2013 surfing doctor in scrubs, Woolacombe style","Egyptian winged serpent considered, but North Devon won","Set up Git CLI for reliable deployments"]},
+{v:"3.0",date:"14 Feb 2025",title:"ARA is Born",items:["Renamed from \u2018508 822 App\u2019 to Anaesthetics Residents App (ARA)","Reordered tabs: Bleeps \u2192 Guides \u2192 508 \u2192 822 \u2192 Config","822 names updated to full names","Context-aware footer messages for each tab","Logo added to header bar"]},
+{v:"2.5",date:"13 Feb 2025",title:"Guidelines & Bleeps",items:["Added Guides tab with Obstetric Anaesthesia Guide (DRAFT) and Preoperative Sedation","Sedation guide rebuilt as interactive quick-reference with tabbed dosing by patient group","Added Bleeps & Codes tab with door codes and bleep numbers","Removed Cover tab \u2013 app expanding beyond rota tool"]},
+{v:"2.0",date:"13 Feb 2025",title:"Progressive Web App",items:["Upgraded to PWA \u2013 installable on phone home screens","Offline support via service worker","localStorage persistence \u2013 changes saved locally on each device","App icons and manifest for standalone mode","Deployed to GitHub Pages"]},
+{v:"1.5",date:"13 Feb 2025",title:"Mobile Web App",items:["Built mobile-first web app with React","4 tabs: 508, 822, Cover, Config","Tap-to-cycle shift editing on expandable person cards","Real-time job plan calculations","SAS badges for staff doctors","Martin\u2019s half long day (\u00bdLD) shift type"]},
+{v:"1.0",date:"13 Feb 2025",title:"Spreadsheet Foundation",items:["Full job planning integration into 10-week rota spreadsheet","COUNTIFS validation across 5 tabs with 825 formulas, zero errors","PA rates for 2008 and 2021 contracts","L2P multiplier: 52/(52-((AL/5)+(18/5)))","Colour-coded shifts: Night, Long Day, \u00bdLD, Day","Individual workload summaries for 10 consultants","Martin (822 SAS Doctor) integration with 13 D shifts + 7 LDs"]}
+];
+return h("div",{style:{padding:"0 4px"}},
+h("div",{style:{textAlign:"center",padding:"16px 0 8px"}},
+h("img",{src:"icon-192.png",width:80,height:80,style:{borderRadius:"50%",border:"3px solid #E67E22",marginBottom:8}}),
+h("div",{style:{fontSize:18,fontWeight:700,color:"#1a202c"}},"ARA"),
+h("div",{style:{fontSize:12,color:"#64748b",marginTop:2}},"Anaesthetics Residents App"),
+h("div",{style:{fontSize:11,color:"#94a3b8",marginTop:2}},"NDDH \u2013 North Devon District Hospital"),
+h("div",{style:{fontSize:10,color:"#94a3b8",marginTop:8,fontStyle:"italic"}},"Built with love, caffeine, and Claude AI")),
+h("div",{style:{margin:"12px 0 6px",fontSize:13,fontWeight:700,color:"#1A5276"}},"\uD83D\uDCCB Version History"),
+versions.map(function(ver,i){
+return h("div",{key:i,style:{marginBottom:8,backgroundColor:i===0?"#EBF5FB":"#fff",border:i===0?"2px solid #5DADE2":"1px solid #e2e8f0",borderRadius:10,padding:"12px 14px",position:"relative"}},
+i===0&&h("span",{style:{position:"absolute",top:8,right:10,fontSize:9,fontWeight:700,color:"#fff",backgroundColor:"#5DADE2",padding:"1px 8px",borderRadius:10}},"LATEST"),
+h("div",{style:{display:"flex",alignItems:"baseline",gap:8,marginBottom:4}},
+h("span",{style:{fontSize:16,fontWeight:700,color:"#E67E22"}},"v"+ver.v),
+h("span",{style:{fontSize:11,color:"#94a3b8"}},ver.date)),
+h("div",{style:{fontSize:13,fontWeight:600,color:"#1a202c",marginBottom:6}},ver.title),
+h("div",null,ver.items.map(function(item,j){
+return h("div",{key:j,style:{fontSize:11,color:"#475569",lineHeight:1.6,paddingLeft:12,position:"relative"}},
+h("span",{style:{position:"absolute",left:0,color:"#E67E22"}},"\u2022"),item);})));}),
+h("div",{style:{textAlign:"center",marginTop:16,padding:"12px",backgroundColor:"#FEF9E7",borderRadius:10,border:"1px solid #F9E79F"}},
+h("div",{style:{fontSize:11,color:"#7D6608",fontWeight:600}},"\uD83C\uDFC4 Made in Woolacombe"),
+h("div",{style:{fontSize:10,color:"#B7950B",marginTop:4}},"North Devon \u2013 where the waves are as unpredictable as the on-call rota")));}
+
 function App(){
 var[tab,setTab]=useState("bleeps");
 var[view,setView]=useState("rota");
@@ -269,7 +301,8 @@ var tabs=[
 {id:"guides",label:"Guides",color:"#8E44AD"},
 {id:"508",label:"508",color:"#E67E22"},
 {id:"822",label:"822",color:"#2C3E6B"},
-{id:"config",label:"Config",color:"#5DADE2"}
+{id:"config",label:"Config",color:"#5DADE2"},
+{id:"about",label:"About",color:"#95A5A6"}
 ];
 var hasViews=tab==="508"||tab==="822";
 
@@ -305,7 +338,8 @@ h(SummaryTable,{people:mArr,baselineAL:bl,showJobPlan:true,showHalfLD:true})),
 tab==="guides"&&h(Guidelines),
 tab==="bleeps"&&h(BleepsCodes),
 tab==="config"&&h(ConfigPanel,{people:p508,onUpdate:hcu,martinConfig:mc,
-onMartinUpdate:hmcu,baselineAL:bl,onBLChange:setBl,onReset:handleReset})),
+onMartinUpdate:hmcu,baselineAL:bl,onBLChange:setBl,onReset:handleReset}),
+tab==="about"&&h(AboutSection)),
 
 h("div",{style:{position:"fixed",bottom:0,left:0,right:0,backgroundColor:"#fff",
 borderTop:"1px solid #e2e8f0",padding:"6px 12px",display:"flex",justifyContent:"center",gap:8,minHeight:32,alignItems:"center"}},
@@ -318,6 +352,7 @@ h("span",{style:{fontSize:9,color:"#64748b",fontWeight:500}},x[1]));})
 tab==="bleeps"?"If the bleep doesn\u2019t work, shout louder":
 tab==="guides"?"Read the guideline before the patient reads your face":
 tab==="config"?"With great PAs comes great responsibility":
+tab==="about"?"Versioning: because \u2018it was working yesterday\u2019 isn\u2019t a commit message":
 "ARA \u2013 NDDH Anaesthetics")));}
 
 ReactDOM.createRoot(document.getElementById("root")).render(h(App));
