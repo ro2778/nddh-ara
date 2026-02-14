@@ -1,12 +1,14 @@
-const CACHE_NAME = 'nddh-rota-v3';
+const CACHE_NAME = 'nddh-rota-v4';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './guide-obstetric.html',
   './guide-preop-sedation.html',
-  './icon-192.svg',
-  './icon-512.svg',
+  './icon-192.png',
+  './icon-512.png',
+  './icon-maskable-192.png',
+  './icon-maskable-512.png',
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js',
   'https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js',
